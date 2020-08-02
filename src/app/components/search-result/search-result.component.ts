@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-searchResult',
-  templateUrl: './searchResult.component.html',
-  styleUrls: ['./searchResult.component.scss']
+  templateUrl: './search-result.component.html',
+  styleUrls: ['./search-result.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
 
