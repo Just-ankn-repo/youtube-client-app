@@ -1,4 +1,5 @@
 {
+  "baseUrl": "src/",
   "defaultSeverity": "error",
   "extends": [
     "codelyzer"
@@ -143,5 +144,10 @@
       "check-type"
     ]
   },
-  "rulesDirectory": []
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": [
+        "e2e/**"
+    ]
+  }
 }

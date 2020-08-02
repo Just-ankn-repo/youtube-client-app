@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { browser, logging, promise } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
