@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import { IApiResponse, IItem } from "../../../models/api-response.model";
 
 @Component({
   selector: 'app-result-card',
@@ -12,4 +13,5 @@ export class ResultCardComponent implements OnInit {
   public ngOnInit(): void {
   }
 
+  @Input() card: IItem;
 }

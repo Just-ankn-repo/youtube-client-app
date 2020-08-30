@@ -1,1 +1,5 @@
-<p>search-results works!</p>
+<div class="response-results" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly center">
+  <div *ngFor="let card of cards">
+    <app-result-card [card] = "card"></app-result-card>
+  </div>
+</div>

@@ -1,1 +1,28 @@
-<p>result-card works!</p>
+<mat-card class="result-card">
+  <img mat-card-image src="{{ card.snippet.thumbnails.standard.url }}">
+  <mat-card-actions fxLayout="row nowrap" fxLayoutAlign="space-evenly">
+    <div class="card-icons" fxLayout="row nowrap" fxLayoutGap="5%" fxLayoutAlign="center center">
+      <mat-icon>remove_red_eye</mat-icon>
+      <span>{{ card.statistics.viewCount }}</span>
+    </div>
+    <div class="card-icons" fxLayout="row nowrap" fxLayoutGap="5%" fxLayoutAlign="center center">
+      <mat-icon>thumb_up</mat-icon>
+      <span>{{ card.statistics.likeCount }}</span>
+    </div>
+    <div class="card-icons" fxLayout="row nowrap" fxLayoutGap="5%" fxLayoutAlign="center center">
+      <mat-icon>thumb_down</mat-icon>
+      <span>{{ card.statistics.dislikeCount }}</span>
+    </div>
+    <div class="card-icons" fxLayout="row nowrap" fxLayoutGap="5%" fxLayoutAlign="center center">
+      <mat-icon>content_copy</mat-icon>
+      <span>{{ card.statistics.commentCount }}</span>
+    </div>
+  </mat-card-actions>
+  <mat-card-header fxLayout="row" fxLayoutAlign="center center">
+    <mat-card-title>{{ card.snippet.title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content fxLayout="row" fxLayoutAlign="center center">
+    <button mat-raised-button color="primary">more...</button>
+  </mat-card-content>
+  <mat-card-footer style="background: #000000; width: 332px; height: 10px; border-radius: 0 0 5px 5px"></mat-card-footer>
+</mat-card>
