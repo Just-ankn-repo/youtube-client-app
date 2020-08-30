@@ -10,3 +10,9 @@ mat-card-header {
 mat-card-title {
   white-space: nowrap;
 }
+
+mat-card-footer {
+  width: 332px !important;
+  height: 10px !important;
+  border-radius: 0 0 5px 5px !important;
+}

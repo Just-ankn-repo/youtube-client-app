@@ -13,6 +13,7 @@ import { CardDetailsComponent } from './components/search-result/result-card/car
 import { SearchComponent } from './components/header/search/search.component';
 import { FilterComponent } from './components/header/filter/filter.component';
 import { LoginComponent } from './components/header/login/login.component';
+import { CardHighlightDirective } from './directives/card-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { LoginComponent } from './components/header/login/login.component';
     SearchComponent,
     FilterComponent,
     LoginComponent,
+    CardHighlightDirective,
   ],
   imports: [
     BrowserModule,
