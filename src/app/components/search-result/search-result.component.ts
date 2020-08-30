@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IApiResponse, IItem } from "../../models/api-response.model";
-import mockResponse from '../../../mock-response';
+import { Component, OnInit, Input } from '@angular/core';
+import { IItem } from '../../models/api-response.model';
 
 @Component({
   selector: 'app-search-result',
@@ -8,13 +7,10 @@ import mockResponse from '../../../mock-response';
   styleUrls: ['./search-result.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
-  cards: IItem[];
+  @Input() cards: IItem[];
 
   constructor() { }
 
-  public ngOnInit(): void {
-    const response: IApiResponse = mockResponse;
-    this.cards = response.items;
+  ngOnInit(): void {
   }
-
 }

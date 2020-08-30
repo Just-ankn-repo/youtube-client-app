@@ -3,7 +3,7 @@
       <mat-panel-title fxLayout="row" fxLayoutAlign="center center">
           <div class="header-left" fxLayout="row" fxLayoutGap="1%" fxFlexAlign="center">
             <img class="logo" src="../../../assets/images/youtube_social_icon_dark.png">
-            <app-search></app-search>
+            <app-search (searchResult)="updateSearchResults($event)"></app-search>
             <button class="filter-button" mat-raised-button color="primary" (click)="mep.expanded = !mep.expanded">
               <mat-icon>tune</mat-icon>
             </button>

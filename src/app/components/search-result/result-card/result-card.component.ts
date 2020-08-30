@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { IApiResponse, IItem } from "../../../models/api-response.model";
+import { IApiResponse, IItem } from '../../../models/api-response.model';
 
 @Component({
   selector: 'app-result-card',
@@ -8,10 +8,10 @@ import { IApiResponse, IItem } from "../../../models/api-response.model";
 })
 export class ResultCardComponent implements OnInit {
 
+  @Input() public card: IItem;
+
   constructor() { }
 
   public ngOnInit(): void {
   }
-
-  @Input() card: IItem;
 }
