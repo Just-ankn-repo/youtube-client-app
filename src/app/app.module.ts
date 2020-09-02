@@ -14,6 +14,9 @@ import { SearchComponent } from './components/header/search/search.component';
 import { FilterComponent } from './components/header/filter/filter.component';
 import { LoginComponent } from './components/header/login/login.component';
 import { CardHighlightDirective } from './directives/card-highlight.directive';
+import { SortByDatePipe } from './pipes/sort-by-date.pipe';
+import { SortByViewsPipe } from './pipes/sort-by-views.pipe';
+import { SortByKeywordPipe } from './pipes/sort-by-keyword.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { CardHighlightDirective } from './directives/card-highlight.directive';
     FilterComponent,
     LoginComponent,
     CardHighlightDirective,
+    SortByDatePipe,
+    SortByViewsPipe,
+    SortByKeywordPipe,
   ],
   imports: [
     BrowserModule,
