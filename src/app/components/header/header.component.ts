@@ -7,13 +7,19 @@ import { IItem } from '../../models/api-response.model';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Output() searchResult = new EventEmitter();
+  @Output() public searchResult: EventEmitter<IItem[]> = new EventEmitter();
+  @Output() public filter: EventEmitter<{type: string, value: boolean | string}> = new EventEmitter();
+
   constructor() { }
 
   public ngOnInit(): void {
   }
 
-  updateSearchResults($event: IItem[]) {
+  public updateSearchResults($event: IItem[]): void {
     this.searchResult.emit($event);
+  }
+
+  public filterSearchResults($event: {type: string, value: boolean | string}): void {
+    this.filter.emit($event);
   }
 }

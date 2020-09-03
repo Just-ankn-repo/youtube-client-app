@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { IItem } from '../../models/api-response.model';
 
 @Component({
@@ -7,10 +7,10 @@ import { IItem } from '../../models/api-response.model';
   styleUrls: ['./search-result.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
-  @Input() cards: IItem[];
+  @Input() public cards: IItem[];
+  @Input() public filter: {type: string, value: boolean | string};
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  public ngOnInit(): void { }
 }
