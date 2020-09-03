@@ -30,13 +30,13 @@ export interface ISnippet {
   };
   channelTitle: string;
   tags: string[];
-  categoryId: string,
-  liveBroadcastContent: string,
+  categoryId: string;
+  liveBroadcastContent: string;
   localized: {
     title: string;
     description: string;
-  },
-  defaultAudioLanguage: string,
+  };
+  defaultAudioLanguage: string;
 }
 
 export interface IThumbnail {

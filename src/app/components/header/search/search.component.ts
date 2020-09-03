@@ -7,14 +7,14 @@ import mockResponse from '../../../../mock-response';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  @Output() searchResult = new EventEmitter();
+  @Output() public searchResult: EventEmitter<IItem[]> = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
-  search() {
+  public search(): void {
     const response: IApiResponse = mockResponse;
     this.searchResult.emit(response.items);
   }

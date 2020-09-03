@@ -2,7 +2,7 @@ import { SortByKeywordPipe } from './sort-by-keyword.pipe';
 
 describe('SortByKeywordPipe', () => {
   it('create an instance', () => {
-    const pipe = new SortByKeywordPipe();
+    const pipe: SortByKeywordPipe = new SortByKeywordPipe();
     expect(pipe).toBeTruthy();
   });
 });

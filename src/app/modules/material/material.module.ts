@@ -8,9 +8,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 
-const material: any[] = [
+const material: object[] = [
   MatToolbarModule,
   MatSidenavModule,
   MatButtonModule,
