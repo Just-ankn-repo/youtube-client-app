@@ -10,7 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-const material: object[] = [
+const material = [
   MatToolbarModule,
   MatSidenavModule,
   MatButtonModule,
