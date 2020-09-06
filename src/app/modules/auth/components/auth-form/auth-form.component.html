@@ -3,7 +3,7 @@
     <mat-card-header>
       <mat-card-title>Log in</mat-card-title>
     </mat-card-header>
-    <form class="login-form">
+    <form class="login-form" (submit)="login($event)">
       <mat-card-content>
         <mat-form-field class="login-full-width">
           <input matInput placeholder="Username">

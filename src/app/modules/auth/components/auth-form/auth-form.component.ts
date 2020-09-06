@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-auth-form',
@@ -6,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth-form.component.scss']
 })
 export class AuthFormComponent implements OnInit {
-  public test: string
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  this.test = '123414'
+  ngOnInit(): void { }
+
+  login($event) {
+    localStorage.setItem('access_token', 'testToken');
+    localStorage.setItem('user_name', $event.target[0].value);
+    this.router.navigate(['']);
   }
-
 }
