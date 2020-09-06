@@ -1,4 +1,4 @@
-import { IApiResponse } from './app/models/api-response.model';
+import { IApiResponse } from './app/modules/youtube/models/api-response.model';
 
 const mockResponse: IApiResponse = {
   'kind': 'youtube#videoListResponse',
