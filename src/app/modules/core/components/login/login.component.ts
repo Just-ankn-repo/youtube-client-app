@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 
@@ -10,10 +10,11 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
   public title: string
 
-  constructor(@Inject(AuthService) private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService,
+              private router: Router) { }
 
   public ngOnInit(): void {
-    this.title = JSON.parse(localStorage.getItem('user_name')) || 'Login'
+    this.title = localStorage.getItem('user_name') || 'Login';
   }
 
   loginLogout() {
