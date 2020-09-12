@@ -15,6 +15,8 @@ import { ResultCardComponent } from './components/result-card/result-card.compon
 import { CardDetailsComponent } from './components/card-details/card-details.component';
 import { SearchResultsComponent } from './pages/search-result/search-result.component';
 
+import { SearchService } from "./services/search.service";
+
 @NgModule({
   declarations: [
     SearchResultsComponent,
@@ -33,7 +35,11 @@ import { SearchResultsComponent } from './pages/search-result/search-result.comp
     YoutubeRoutingModule
   ],
   exports: [
-    SearchResultsComponent
+    SearchResultsComponent,
+    CardDetailsComponent
+  ],
+  providers: [
+    SearchService
   ]
 })
 export class YoutubeModule { }

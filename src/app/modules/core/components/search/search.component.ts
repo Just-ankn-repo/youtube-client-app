@@ -1,6 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { IApiResponse, IItem } from '../../../youtube/models/api-response.model';
-import mockResponse from '../../../../../mock-response';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-search',

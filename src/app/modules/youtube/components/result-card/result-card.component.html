@@ -22,7 +22,7 @@
     <mat-card-title>{{ card.snippet.title }}</mat-card-title>
   </mat-card-header>
   <mat-card-content fxLayout="row" fxLayoutAlign="center center">
-    <button mat-raised-button color="primary">more...</button>
+    <button mat-raised-button color="primary" routerLink="details/{{ card.id }}">more...</button>
   </mat-card-content>
 <mat-card-footer appCardHighlight [publishedAt]="card.snippet.publishedAt"></mat-card-footer>
 </mat-card>

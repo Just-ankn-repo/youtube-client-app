@@ -14,7 +14,7 @@ import { FilterService } from "../../../shared/services/filter.service";
 export class SearchResultsComponent implements OnInit {
   public cards: IItem[];
   public filter: {type: string, value: boolean | string};
-  public searchKeyWord: string
+  public searchKeyWord: string;
 
   constructor(private filters: FilterService,
               private search: SearchService,

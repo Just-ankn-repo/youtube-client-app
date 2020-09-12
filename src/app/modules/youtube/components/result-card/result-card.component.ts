@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { IApiResponse, IItem } from '../../models/api-response.model';
+import {CardDetailsService} from "../../services/card-details.service";
 
 @Component({
   selector: 'app-result-card',

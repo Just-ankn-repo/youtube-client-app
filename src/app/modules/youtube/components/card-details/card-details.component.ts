@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IItem } from "../../models/api-response.model";
+import {ActivatedRoute} from "@angular/router";
+import {SearchService} from "../../services/search.service";
 
 @Component({
   selector: 'app-card-details',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-details.component.scss']
 })
 export class CardDetailsComponent implements OnInit {
+  public card: IItem
+  public cardId: string;
 
-  constructor() { }
+  constructor(private activateRoute: ActivatedRoute,
+              private search: SearchService) {
+    this.cardId = activateRoute.snapshot.params['cardId']
+  }
 
   public ngOnInit(): void {
+    this.card = this.search.getCard(this.cardId);
   }
 
 }
