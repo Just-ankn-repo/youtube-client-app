@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthFormComponent } from "./components/auth-form/auth-form.component";
+import { AuthPageComponent } from "./pages/auth-page/auth-page.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: AuthFormComponent
+    component: AuthPageComponent
   }
 ];
 

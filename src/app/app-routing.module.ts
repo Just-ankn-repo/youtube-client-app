@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {Page404Component} from "./modules/core/components/page404/page404.component";
-import {SearchResultsComponent} from "./modules/youtube/components/search-result/search-result.component";
-import {AppComponent} from "./app.component";
-import {AuthFormComponent} from "./modules/auth/components/auth-form/auth-form.component";
-import {WelcomePageComponent} from "./modules/core/components/welcome-page/welcome-page.component";
-import {YoutubeModule} from "./modules/youtube/youtube.module";
+import {Page404Component} from "./modules/core/pages/page404/page404.component";
+import {WelcomePageComponent} from "./modules/core/pages/welcome-page/welcome-page.component";
 import {AuthGuard} from "./modules/core/guards/auth.guard";
 
 const routes: Routes = [

@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 import {MaterialModule} from "../material/material.module";
 import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import {AuthRoutingModule} from "./auth-routing.module";
+import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 
 @NgModule({
-  declarations: [AuthFormComponent],
+  declarations: [AuthFormComponent, AuthPageComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
@@ -14,7 +15,7 @@ import {AuthRoutingModule} from "./auth-routing.module";
     AuthRoutingModule
   ],
   exports: [
-    AuthFormComponent
+    AuthPageComponent
   ]
 })
 export class AuthModule { }
