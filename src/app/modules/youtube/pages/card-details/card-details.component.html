@@ -1,7 +1,18 @@
-<div>
-  <mat-card class="result-card">
-    <img mat-card-image src="{{ card.snippet.thumbnails.standard.url }}">
-    <mat-card-actions fxLayout="row nowrap" fxLayoutAlign="space-evenly">
+<div class="card-with-details" fxLayout="row">
+  <button mat-raised-button color="primary" class="close-card-button" fxFlexAlign="start" fxFlex="4" (click)="closeCardDetails()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+  <img class="card-details-image" fxFlex="56" fxFlexAlign="stretch" src="{{ card.snippet.thumbnails.standard.url }}">
+  <mat-card class="card-details" fxLayout="column" fxFlex="40" fxFlexAlign="stretch">
+    <div fxFlex="10" fxLayout="row" fxFlexAlign="stretch" fxLayoutGap="5%">
+      <mat-card-title fxFlexAlign="center" title="{{ card.snippet.title }}">{{ card.snippet.title }}</mat-card-title>
+      <mat-card-subtitle fxFlexAlign="end">{{ card.snippet.publishedAt }}</mat-card-subtitle>
+    </div>
+    <mat-card-content fxFlex="80">
+      <p>Description:</p>
+      <mat-card-subtitle>{{ card.snippet.description }}</mat-card-subtitle>
+    </mat-card-content>
+    <mat-card-actions fxFlex="8"fxLayout="row nowrap" fxLayoutAlign="space-evenly">
       <div class="card-icons" fxLayout="row nowrap" fxLayoutGap="5%" fxLayoutAlign="center center">
         <mat-icon>remove_red_eye</mat-icon>
         <span>{{ card.statistics.viewCount }}</span>
@@ -19,9 +30,6 @@
         <span>{{ card.statistics.commentCount }}</span>
       </div>
     </mat-card-actions>
-    <mat-card-header fxLayout="row" fxLayoutAlign="center center">
-      <mat-card-title>{{ card.snippet.title }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-footer appCardHighlight [publishedAt]="card.snippet.publishedAt"></mat-card-footer>
+    <mat-card-footer fxFlex="2" appCardHighlight [publishedAt]="card.snippet.publishedAt"></mat-card-footer>
   </mat-card>
 </div>

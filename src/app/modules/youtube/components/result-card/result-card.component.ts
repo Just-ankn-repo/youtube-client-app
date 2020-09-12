@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { IApiResponse, IItem } from '../../models/api-response.model';
+import { IItem } from '../../models/api-response.model';
 
 @Component({
   selector: 'app-result-card',

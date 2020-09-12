@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { IItem } from "../../models/api-response.model";
 import {ActivatedRoute} from "@angular/router";
 import {SearchService} from "../../services/search.service";
@@ -13,6 +14,7 @@ export class CardDetailsComponent implements OnInit {
   public cardId: string;
 
   constructor(private activateRoute: ActivatedRoute,
+              private location: Location,
               private search: SearchService) {
     this.cardId = activateRoute.snapshot.params['cardId']
   }
@@ -21,4 +23,7 @@ export class CardDetailsComponent implements OnInit {
     this.card = this.search.getCard(this.cardId);
   }
 
+  closeCardDetails(): void {
+    this.location.back();
+  }
 }

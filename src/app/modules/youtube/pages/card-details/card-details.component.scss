@@ -1,0 +1,26 @@
+.card-with-details {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2% 0;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.55));
+}
+
+.close-card-button {
+  min-width: 0px !important;
+  border-radius: 5px 0 0 5px !important;
+}
+
+.card-details-image {
+  border-radius: 0 0 0 5px !important;
+}
+
+mat-card-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 35px;
+}
+
+mat-card-footer {
+  border-radius: 0 0 5px 0 !important;
+}
