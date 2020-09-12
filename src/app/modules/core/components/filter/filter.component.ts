@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Inject} from '@angular/core';
+import { FilterService } from "../../../shared/services/filter.service";
 
 @Component({
   selector: 'app-filter',
@@ -6,35 +7,26 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
-  @Output() public filter: EventEmitter<{type: string, value: boolean | string}> = new EventEmitter();
-  public filterByDateDesc: boolean;
-  public filterByViewsDesc: boolean;
-  public filterByKeywordValue: string;
+  public filterByDateDesc: boolean = false;
+  public filterByViewsDesc: boolean = false;
 
-  constructor() { }
+  constructor(private filters: FilterService) { }
 
-  public ngOnInit(): void {
-    this.filterByDateDesc = false;
-    this.filterByViewsDesc = false;
-    this.filterByKeywordValue = '';
-  }
+  public ngOnInit(): void { }
 
   public filterByDate(): boolean {
-    this.filterByDateDesc = this.filterByDateDesc === false ? true : false;
-    this.filter.emit({ type: 'sortByDate', value: this.filterByDateDesc});
-
+    this.filterByDateDesc = !this.filterByDateDesc;
+    this.filters.setFilter('sortByDate', this.filterByDateDesc);
     return false;
   }
 
   public filterByViews(): boolean {
-    this.filterByViewsDesc = this.filterByViewsDesc === false ? true : false;
-    this.filter.emit({ type: 'sortByViews', value: this.filterByViewsDesc});
-
+    this.filterByViewsDesc = !this.filterByViewsDesc;
+    this.filters.setFilter('sortByViews', this.filterByViewsDesc);
     return false;
   }
 
   public filterByKeyword(keyword: string): void {
-    this.filterByKeywordValue = keyword;
-    this.filter.emit({ type: 'sortByKeyword', value: this.filterByKeywordValue});
+    this.filters.setFilter('sortByKeyword', keyword);
   }
 }

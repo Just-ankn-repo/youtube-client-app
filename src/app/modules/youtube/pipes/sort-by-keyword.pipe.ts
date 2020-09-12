@@ -2,7 +2,8 @@ import { IItem } from '../models/api-response.model';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sortByKeyword'
+  name: 'sortByKeyword',
+  pure: false,
 })
 export class SortByKeywordPipe implements PipeTransform {
 

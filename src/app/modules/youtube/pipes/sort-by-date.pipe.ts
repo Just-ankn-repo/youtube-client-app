@@ -2,7 +2,8 @@ import { IItem } from '../models/api-response.model';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sortByDate'
+  name: 'sortByDate',
+  pure: false,
 })
 export class SortByDatePipe implements PipeTransform {
 

@@ -6,7 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './modules/core/core.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { FormsModule } from '@angular/forms';
-import {AuthGuard} from "./modules/core/guards/auth.guard";
+import { AuthGuard } from "./modules/core/guards/auth.guard";
+import { FilterService } from "./modules/shared/services/filter.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import {AuthGuard} from "./modules/core/guards/auth.guard";
     SharedModule
   ],
   exports: [],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard,
+    FilterService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

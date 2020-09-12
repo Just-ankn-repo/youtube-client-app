@@ -2,7 +2,8 @@ import { IItem } from '../models/api-response.model';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sortByViews'
+  name: 'sortByViews',
+  pure: false,
 })
 export class SortByViewsPipe implements PipeTransform {
 
