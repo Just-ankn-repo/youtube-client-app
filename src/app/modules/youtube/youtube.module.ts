@@ -12,7 +12,7 @@ import { SortByDatePipe } from './pipes/sort-by-date.pipe';
 import { CardHighlightDirective } from './directives/card-highlight.directive';
 
 import { ResultCardComponent } from './components/result-card/result-card.component';
-import { CardDetailsComponent } from './components/card-details/card-details.component';
+import { CardDetailsComponent } from './pages/card-details/card-details.component';
 import { SearchResultsComponent } from './pages/search-result/search-result.component';
 
 import { SearchService } from "./services/search.service";
