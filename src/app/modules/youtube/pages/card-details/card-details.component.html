@@ -5,8 +5,8 @@
   <img class="card-details-image" fxFlex="56" fxFlexAlign="stretch" src="{{ card.snippet.thumbnails.standard.url }}">
   <mat-card class="card-details" fxLayout="column" fxFlex="40" fxFlexAlign="stretch">
     <div fxFlex="10" fxLayout="row" fxFlexAlign="stretch" fxLayoutGap="5%">
-      <mat-card-title fxFlexAlign="center" title="{{ card.snippet.title }}">{{ card.snippet.title }}</mat-card-title>
-      <mat-card-subtitle fxFlexAlign="end">{{ card.snippet.publishedAt }}</mat-card-subtitle>
+      <mat-card-title fxFlex="60" fxFlexAlign="center" title="{{ card.snippet.title }}">{{ card.snippet.title }}</mat-card-title>
+      <mat-card-subtitle fxFlex="40" fxFlexAlign="end" appHumanReadableDate [publishedAt]="card.snippet.publishedAt"></mat-card-subtitle>
     </div>
     <mat-card-content fxFlex="80">
       <p>Description:</p>

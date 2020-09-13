@@ -16,6 +16,7 @@ import { CardDetailsComponent } from './pages/card-details/card-details.componen
 import { SearchResultsComponent } from './pages/search-result/search-result.component';
 
 import { SearchService } from "./services/search.service";
+import { HumanReadableDateDirective } from './directives/human-readable-date.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SearchService } from "./services/search.service";
     ResultCardComponent,
     CardDetailsComponent,
     CardHighlightDirective,
+    HumanReadableDateDirective,
     SortByDatePipe,
     SortByKeywordPipe,
     SortByViewsPipe

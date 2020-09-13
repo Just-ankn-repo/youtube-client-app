@@ -8,13 +8,13 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public title: string
+  public username: string
 
   constructor(private auth: AuthService,
               private router: Router) { }
 
   public ngOnInit(): void {
-    this.title = localStorage.getItem('user_name') || 'Login';
+    this.username = localStorage.getItem('user_name') || 'Login';
   }
 
   loginLogout() {
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     if (this.auth.isLoggedIn) {
       this.auth.logout();
     }
-    this.title = 'Login';
+    this.username = 'Login';
     this.router.navigate(['/auth']);
 
     return false;

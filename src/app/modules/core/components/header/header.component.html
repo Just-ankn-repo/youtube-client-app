@@ -1,16 +1,12 @@
 <mat-expansion-panel [disabled]="true" #mep="matExpansionPanel">
   <mat-expansion-panel-header style="height: 10vh;">
-      <mat-panel-title fxLayout="row" fxLayoutAlign="center center">
-          <div class="header-left" fxLayout="row" fxLayoutGap="1%" fxFlexAlign="center">
-            <img class="logo" src="../../../assets/images/youtube_social_icon_dark.png">
-            <app-search></app-search>
-            <button class="filter-button" mat-raised-button color="primary" (click)="mep.expanded = !mep.expanded">
-              <mat-icon>tune</mat-icon>
-            </button>
-          </div>
-         <div class="header-right" fxFlex="10" fxFlexAlign="center">
-           <app-login></app-login>
-         </div>
+      <mat-panel-title fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center">
+        <img class="logo" src="../../../assets/images/youtube_social_icon_dark.png">
+        <app-search></app-search>
+        <button class="filter-button" mat-raised-button color="primary" (click)="mep.expanded = !mep.expanded">
+          <mat-icon>tune</mat-icon>
+        </button>
+         <app-login class="header-right" fxFlex="10"></app-login>
       </mat-panel-title>
   </mat-expansion-panel-header>
   <app-filter></app-filter>

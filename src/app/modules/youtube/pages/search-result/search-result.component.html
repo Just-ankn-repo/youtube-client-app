@@ -1,4 +1,4 @@
-<div class="response-results" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly center">
+<div class="response-results" fxLayout="row wrap" fxLayout.xs="row" fxLayoutAlign="space-between">
   <div *ngFor="let card of cards | sortByDate: filter | sortByViews: filter | sortByKeyword: filter">
     <app-result-card [card] = "card"></app-result-card>
   </div>

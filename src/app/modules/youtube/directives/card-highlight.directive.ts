@@ -5,7 +5,7 @@ import { cardHighlightsColors } from '../../../constants/colors.const';
   selector: '[appCardHighlight]'
 })
 export class CardHighlightDirective {
-  public cardHighlightBackgrounfColor: string;
+  public cardHighlightBackgroundColor: string;
   @Input() public publishedAt: string;
 
   constructor(private el: ElementRef) { }

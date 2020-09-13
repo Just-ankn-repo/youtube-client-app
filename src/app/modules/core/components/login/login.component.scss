@@ -1,7 +1,11 @@
 @import '../../../../../../node_modules/@angular/material/theming';
 @include mat-core();
 
-.header-login {
-  font-size: 1.1rem;
-  // color: mat-color($primary);
+.login-element {
+  cursor: pointer;
+  color: $dark-primary-text;
+}
+
+.login-element:hover {
+  color: $dark-secondary-text;
 }
