@@ -5,6 +5,7 @@ import { IItem } from '../../models/api-response.model';
 
 import { SearchService } from '../../services/search.service';
 import { FilterService } from '../../../shared/services/filter.service';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-search-result',
@@ -12,18 +13,17 @@ import { FilterService } from '../../../shared/services/filter.service';
   styleUrls: ['./search-result.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
-  public cards: IItem[];
-  public filter: {type: string, value: boolean | string};
-  public searchKeyWord: string;
+  public cards: Observable<IItem[]>;
+  public filter: { type: string, value: boolean | string };
 
   constructor(private filters: FilterService,
               private search: SearchService,
-              private activateRoute: ActivatedRoute) {
-    this.searchKeyWord = activateRoute.snapshot.params.searchKeyWord;
-  }
+              private activateRoute: ActivatedRoute) { }
 
   public ngOnInit(): void {
+    this.activateRoute.params.subscribe(data=> {
+      this.cards = this.search.getSearchResult(data['searchKeyWord']);
+    });
     this.filter = this.filters.getFilters();
-    this.cards = this.search.getSearchResult();
   }
 }

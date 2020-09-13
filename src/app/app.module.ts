@@ -8,12 +8,14 @@ import { SharedModule } from './modules/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './modules/core/guards/auth.guard';
 import { FilterService } from './modules/shared/services/filter.service';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

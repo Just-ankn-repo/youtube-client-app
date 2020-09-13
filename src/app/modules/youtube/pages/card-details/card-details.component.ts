@@ -15,12 +15,13 @@ export class CardDetailsComponent implements OnInit {
 
   constructor(private activateRoute: ActivatedRoute,
               private location: Location,
-              private search: SearchService) {
-    this.cardId = activateRoute.snapshot.params.cardId;
-  }
+              private search: SearchService) { }
 
   public ngOnInit(): void {
-    this.card = this.search.getCard(this.cardId);
+    this.cardId = this.activateRoute.snapshot.params.cardId;
+    this.search.getCard(this.cardId).subscribe(result => {
+      this.card = result;
+    });
   }
 
   public closeCardDetails(): void {
