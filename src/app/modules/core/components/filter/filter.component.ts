@@ -1,5 +1,5 @@
-import {Component, OnInit, Output, EventEmitter, Inject} from '@angular/core';
-import { FilterService } from "../../../shared/services/filter.service";
+import {Component, OnInit} from '@angular/core';
+import { FilterService } from '../../../shared/services/filter.service';
 
 @Component({
   selector: 'app-filter',

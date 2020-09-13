@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from "../../services/auth.service";
-import {Router} from "@angular/router";
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public username: string
+  public username: string;
 
   constructor(private auth: AuthService,
               private router: Router) { }
@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
     this.username = localStorage.getItem('user_name') || 'Login';
   }
 
-  loginLogout() {
-    console.log(this.auth.isLoggedIn)
+  public loginLogout(): boolean {
+    console.log(this.auth.isLoggedIn);
     if (this.auth.isLoggedIn) {
       this.auth.logout();
     }

@@ -1,10 +1,10 @@
-import {Component, OnInit, Input, Inject} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 import { IItem } from '../../models/api-response.model';
 
-import { SearchService } from "../../services/search.service";
-import { FilterService } from "../../../shared/services/filter.service";
+import { SearchService } from '../../services/search.service';
+import { FilterService } from '../../../shared/services/filter.service';
 
 @Component({
   selector: 'app-search-result',
@@ -19,11 +19,11 @@ export class SearchResultsComponent implements OnInit {
   constructor(private filters: FilterService,
               private search: SearchService,
               private activateRoute: ActivatedRoute) {
-    this.searchKeyWord = activateRoute.snapshot.params['searchKeyWord']
+    this.searchKeyWord = activateRoute.snapshot.params.searchKeyWord;
   }
 
   public ngOnInit(): void {
     this.filter = this.filters.getFilters();
-    this.cards = this.search.getSearchResult(this.searchKeyWord);
+    this.cards = this.search.getSearchResult();
   }
 }

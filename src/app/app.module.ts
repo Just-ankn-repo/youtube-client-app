@@ -6,8 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './modules/core/core.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { FormsModule } from '@angular/forms';
-import { AuthGuard } from "./modules/core/guards/auth.guard";
-import { FilterService } from "./modules/shared/services/filter.service";
+import { AuthGuard } from './modules/core/guards/auth.guard';
+import { FilterService } from './modules/shared/services/filter.service';
 
 @NgModule({
   declarations: [

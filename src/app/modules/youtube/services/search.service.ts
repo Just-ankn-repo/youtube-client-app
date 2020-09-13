@@ -10,14 +10,14 @@ export class SearchService {
 
   constructor() { }
 
-  getSearchResult(keyword: string): IItem[] {
-    return mockResponse.items
+  public getSearchResult(): IItem[] {
+    return mockResponse.items;
   }
 
-  getCard(id: string): IItem {
+  public getCard(id: string): IItem {
     this.cardDetails = mockResponse.items.filter((item) => {
       return item.id === id;
-    })
+    });
     return this.cardDetails[0];
   }
 }

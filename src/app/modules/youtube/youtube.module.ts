@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from "../material/material.module";
+import { MaterialModule } from '../material/material.module';
 
-import { YoutubeRoutingModule } from "./youtube-routing.module";
+import { YoutubeRoutingModule } from './youtube-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -15,7 +15,7 @@ import { ResultCardComponent } from './components/result-card/result-card.compon
 import { CardDetailsComponent } from './pages/card-details/card-details.component';
 import { SearchResultsComponent } from './pages/search-result/search-result.component';
 
-import { SearchService } from "./services/search.service";
+import { SearchService } from './services/search.service';
 import { HumanReadableDateDirective } from './directives/human-readable-date.directive';
 
 @NgModule({

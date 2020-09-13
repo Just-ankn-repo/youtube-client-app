@@ -13,7 +13,7 @@ const months: string[] = [
   'October',
   'November',
   'December'
-]
+];
 
 const weekdays: string[] = [
   'Sunday',
@@ -23,8 +23,7 @@ const weekdays: string[] = [
   'Thursday',
   'Friday',
   'Saturday'
-]
-
+];
 
 @Directive({
   selector: '[appHumanReadableDate]'

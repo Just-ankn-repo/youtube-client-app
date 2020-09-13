@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -9,13 +8,13 @@ export class AuthService {
 
   constructor() { }
 
-  logout() {
+  public logout(): void {
     localStorage.removeItem('access_token');
     localStorage.removeItem('user_name');
   }
 
   get isLoggedIn(): boolean {
-    const getAccessToken:string = localStorage.getItem('access_token');
+    const getAccessToken: string = localStorage.getItem('access_token');
     return getAccessToken === 'testToken';
   }
 
