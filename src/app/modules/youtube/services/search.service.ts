@@ -11,10 +11,10 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   public getSearchResult(keyword: string): Observable<IItem[]> {
-    const apiURL = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBvYfy9fVbkFL0-LNzESn7lxvIPqBv-5LI&part=snippet&q=${keyword}&type=video&maxResults=15`;
+    const apiURL = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAzIK9ZMlPkP_A4-4jXic6fHYFgFnWKQPU&part=snippet&q=${keyword}&type=video&maxResults=15`;
 
     return this.http.get(apiURL).pipe(mergeMap(data => {
-      const apiDetailsURL = `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBvYfy9fVbkFL0-LNzESn7lxvIPqBv-5LI&part=snippet,statistics&id=${data["items"].map(item => item.id.videoId).join(',')}`;
+      const apiDetailsURL = `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAzIK9ZMlPkP_A4-4jXic6fHYFgFnWKQPU&part=snippet,statistics&id=${data["items"].map(item => item.id.videoId).join(',')}`;
       return this.http.get(apiDetailsURL)
         .pipe(map(result => result["items"]
       ));
@@ -22,7 +22,7 @@ export class SearchService {
   }
 
   public getCard(id: string): Observable<IItem> {
-    const apiDetailsURL = `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBvYfy9fVbkFL0-LNzESn7lxvIPqBv-5LI&part=snippet,statistics&id=${id}`;
+    const apiDetailsURL = `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAzIK9ZMlPkP_A4-4jXic6fHYFgFnWKQPU&part=snippet,statistics&id=${id}`;
     return this.http.get(apiDetailsURL).pipe(map(data => data["items"][0]));
   }
 }
