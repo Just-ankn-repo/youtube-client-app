@@ -1,11 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { IItem } from '../../models/api-response.model';
 
 import { SearchService } from '../../services/search.service';
 import { FilterService } from '../../../shared/services/filter.service';
-import {Observable} from "rxjs";
+import { Observable } from "rxjs";
+import { filter, mergeMap, debounceTime } from "rxjs/operators";
 
 @Component({
   selector: 'app-search-result',
@@ -15,15 +16,22 @@ import {Observable} from "rxjs";
 export class SearchResultsComponent implements OnInit {
   public cards: Observable<IItem[]>;
   public filter: { type: string, value: boolean | string };
+  public test3: IItem[]
 
   constructor(private filters: FilterService,
               private search: SearchService,
               private activateRoute: ActivatedRoute) { }
 
   public ngOnInit(): void {
-    this.activateRoute.params.subscribe(data=> {
-      this.cards = this.search.getSearchResult(data['searchKeyWord']);
-    });
+    this.cards = this.activateRoute.params
+      .pipe(
+        debounceTime(2000),
+        filter(param => param.searchKeyWord.length >= 3),
+        mergeMap( param => {
+          return this.search.getSearchResult(param.searchKeyWord);
+        })
+      );
+
     this.filter = this.filters.getFilters();
   }
 }

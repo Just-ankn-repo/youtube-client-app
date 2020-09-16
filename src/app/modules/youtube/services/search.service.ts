@@ -3,6 +3,7 @@ import { IItem } from '../models/api-response.model';
 import {Observable} from "rxjs";
 import {map, mergeMap} from 'rxjs/operators';
 import {HttpClient} from "@angular/common/http";
+import apiVars from "../../../constants/api.const";
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,10 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   public getSearchResult(keyword: string): Observable<IItem[]> {
-    const apiURL = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAzIK9ZMlPkP_A4-4jXic6fHYFgFnWKQPU&part=snippet&q=${keyword}&type=video&maxResults=15`;
+    const apiURL = `${apiVars.apiURL}&q=${keyword}&key=${apiVars.apiKey}`;
 
     return this.http.get(apiURL).pipe(mergeMap(data => {
-      const apiDetailsURL = `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAzIK9ZMlPkP_A4-4jXic6fHYFgFnWKQPU&part=snippet,statistics&id=${data["items"].map(item => item.id.videoId).join(',')}`;
+      const apiDetailsURL = `${apiVars.apiDetailsURL}&id=${data["items"].map(item => item.id.videoId).join(',')}&key=${apiVars.apiKey}`;
       return this.http.get(apiDetailsURL)
         .pipe(map(result => result["items"]
       ));
@@ -22,7 +23,7 @@ export class SearchService {
   }
 
   public getCard(id: string): Observable<IItem> {
-    const apiDetailsURL = `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAzIK9ZMlPkP_A4-4jXic6fHYFgFnWKQPU&part=snippet,statistics&id=${id}`;
+    const apiDetailsURL = `${apiVars.apiDetailsURL}&id=${id}&key=${apiVars.apiKey}`;
     return this.http.get(apiDetailsURL).pipe(map(data => data["items"][0]));
   }
 }
