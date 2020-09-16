@@ -2,7 +2,7 @@
   <button mat-raised-button color="primary" class="close-card-button" fxFlexAlign="start" fxFlex="4" (click)="closeCardDetails()">
     <mat-icon>arrow_back_ios</mat-icon>
   </button>
-  <img class="card-details-image" fxFlex="56" fxFlexAlign="stretch" src="{{ card.snippet.thumbnails.standard.url }}">
+  <img class="card-details-image" fxFlex="56" fxFlexAlign="stretch" src="{{ card.snippet.thumbnails.high.url }}">
   <mat-card class="card-details" fxLayout="column" fxFlex="40" fxFlexAlign="stretch">
     <div fxFlex="10" fxLayout="row" fxFlexAlign="stretch" fxLayoutGap="5%">
       <mat-card-title fxFlex="60" fxFlexAlign="center" title="{{ card.snippet.title }}">{{ card.snippet.title }}</mat-card-title>
