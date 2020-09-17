@@ -11,11 +11,14 @@ export interface IApiResponse {
 export interface IItem {
   kind: string;
   etag: string;
-  id: string;
+  id: IId;
   snippet: ISnippet;
   statistics: IStatistics;
 }
 
+export interface IId {
+  videoId: string;
+}
 export interface ISnippet {
   publishedAt: string;
   channelId: string;

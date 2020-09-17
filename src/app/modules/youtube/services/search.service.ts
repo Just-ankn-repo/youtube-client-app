@@ -1,8 +1,9 @@
+import { IApiResponse } from './../models/api-response.model';
 import { Injectable } from '@angular/core';
 import { IItem } from '../models/api-response.model';
-import {Observable} from "rxjs";
-import {map, mergeMap} from 'rxjs/operators';
-import {HttpClient} from "@angular/common/http";
+import { Observable } from 'rxjs';
+import { map, mergeMap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,18 +13,20 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   public getSearchResult(keyword: string): Observable<IItem[]> {
-    const apiURL = `search?part=snippet&type=video&maxResults=15&q=${keyword}`;
+    const apiURL: string = 'search?part=snippet&type=video&maxResults=15&q=' + keyword;
 
-    return this.http.get(apiURL).pipe(mergeMap(data => {
-      const apiDetailsURL = `videos?part=snippet,statistics&id=${data["items"].map(item => item.id.videoId).join(',')}`;
-      return this.http.get(apiDetailsURL)
-        .pipe(map(result => result["items"]
-      ));
+    return this.http.get<IApiResponse>(apiURL).pipe(
+      mergeMap(data => {
+        const ids: string = data.items.map(item => item.id.videoId).join(',');
+        const apiDetailsURL: string = 'videos?part=snippet,statistics&id=' + ids;
+        return this.http.get<IApiResponse>(apiDetailsURL).pipe(
+            map(result => result.items
+        ));
     }));
   }
 
   public getCard(id: string): Observable<IItem> {
-    const apiDetailsURL = `videos?part=snippet,statistics&id=${id}`;
-    return this.http.get(apiDetailsURL).pipe(map(data => data["items"][0]));
+    const apiDetailsURL: string = 'videos?part=snippet,statistics&id=' + id;
+    return this.http.get<IApiResponse>(apiDetailsURL).pipe(map(data => data.items[0]));
   }
 }

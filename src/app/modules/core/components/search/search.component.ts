@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -14,7 +14,8 @@ export class SearchComponent implements OnInit {
   public ngOnInit(): void { }
 
   public searchKeyword($event: Event): void {
-    this.searchKeyWord = $event.target['value'];
+    const eTarget: HTMLTextAreaElement = $event.target as HTMLTextAreaElement;
+    this.searchKeyWord = eTarget.value;
     this.router.navigate([`/search/${this.searchKeyWord}`]);
   }
 }

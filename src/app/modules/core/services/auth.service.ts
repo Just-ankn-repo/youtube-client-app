@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import {Observable, Subject} from "rxjs";
+import {Observable, Subject} from 'rxjs';
 
 interface IAuth {
   username: string;
-  authenticated: boolean
+  authenticated: boolean;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private authSubject = new Subject<IAuth>();
+  private authSubject: Subject<IAuth> = new Subject<IAuth>();
 
   constructor() { }
 

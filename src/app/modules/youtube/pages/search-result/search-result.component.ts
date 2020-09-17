@@ -5,8 +5,8 @@ import { IItem } from '../../models/api-response.model';
 
 import { SearchService } from '../../services/search.service';
 import { FilterService } from '../../../shared/services/filter.service';
-import { Observable } from "rxjs";
-import { filter, mergeMap, debounceTime } from "rxjs/operators";
+import { Observable } from 'rxjs';
+import { filter, mergeMap, debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-result',

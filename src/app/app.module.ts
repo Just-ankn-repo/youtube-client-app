@@ -8,9 +8,9 @@ import { SharedModule } from './modules/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './modules/core/guards/auth.guard';
 import { FilterService } from './modules/shared/services/filter.service';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {HttpInterceptorService} from "./modules/youtube/services/http-interceptor.service";
-import { AuthService } from "./modules/core/services/auth.service";
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpInterceptorService } from './modules/youtube/services/http-interceptor.service';
+import { AuthService } from './modules/core/services/auth.service';
 
 @NgModule({
   declarations: [

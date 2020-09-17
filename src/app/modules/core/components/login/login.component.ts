@@ -8,10 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public username: string = 'Login';
   private isLogin: boolean;
-
-
+  public username: string = 'Login';
 
   constructor(private auth: AuthService,
               private router: Router) { }
@@ -20,7 +18,7 @@ export class LoginComponent implements OnInit {
     this.auth.isLoggedIn.subscribe( param => {
       this.username = param.username !== '' ? param.username : 'Login';
       this.isLogin = param.authenticated;
-    })
+    });
   }
 
   public loginLogout(): boolean {
