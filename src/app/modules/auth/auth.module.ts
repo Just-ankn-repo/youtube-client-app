@@ -7,7 +7,10 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 
 @NgModule({
-  declarations: [AuthFormComponent, AuthPageComponent],
+  declarations: [
+    AuthFormComponent,
+    AuthPageComponent
+  ],
   imports: [
     CommonModule,
     FlexLayoutModule,
