@@ -11,6 +11,7 @@ import { FilterService } from './modules/shared/services/filter.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpInterceptorService } from './modules/youtube/services/http-interceptor.service';
 import { AuthService } from './modules/core/services/auth.service';
+import { AdminGuard } from "./modules/core/guards/admin.guard";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AuthService } from './modules/core/services/auth.service';
   exports: [],
   providers: [
     AuthGuard,
+    AdminGuard,
     FilterService,
     AuthService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
