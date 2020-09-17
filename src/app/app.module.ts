@@ -10,6 +10,7 @@ import { AuthGuard } from './modules/core/guards/auth.guard';
 import { FilterService } from './modules/shared/services/filter.service';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {HttpInterceptorService} from "./modules/youtube/services/http-interceptor.service";
+import { AuthService } from "./modules/core/services/auth.service";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {HttpInterceptorService} from "./modules/youtube/services/http-intercepto
   providers: [
     AuthGuard,
     FilterService,
+    AuthService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
   ],
   bootstrap: [AppComponent]

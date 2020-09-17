@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthService } from "../../../core/services/auth.service";
 
 @Component({
   selector: 'app-auth-form',
@@ -7,13 +8,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./auth-form.component.scss']
 })
 export class AuthFormComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(private auth: AuthService,
+              private router: Router) { }
 
   public ngOnInit(): void { }
 
   public login($event: Event): void {
-    localStorage.setItem('access_token', 'testToken');
-    localStorage.setItem('user_name', $event.target[0].value);
+    this.auth.login($event.target[0].value);
     this.router.navigate(['']);
   }
 }

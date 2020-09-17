@@ -13,7 +13,6 @@ import { FilterComponent } from './components/filter/filter.component';
 
 import { Page404Component } from './pages/page404/page404.component';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
-import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -36,8 +35,6 @@ import { AuthService } from './services/auth.service';
     Page404Component,
     WelcomePageComponent
   ],
-  providers: [
-    AuthService
-  ]
+  providers: [ ]
 })
 export class CoreModule { }

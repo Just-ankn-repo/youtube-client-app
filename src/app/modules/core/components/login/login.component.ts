@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../../services/auth.service';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,21 +8,25 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public username: string;
+  public username: string = 'Login';
+  private isLogin: boolean;
+
+
 
   constructor(private auth: AuthService,
               private router: Router) { }
 
   public ngOnInit(): void {
-    this.username = localStorage.getItem('user_name') || 'Login';
+    this.auth.isLoggedIn.subscribe( param => {
+      this.username = param.username !== '' ? param.username : 'Login';
+      this.isLogin = param.authenticated;
+    })
   }
 
   public loginLogout(): boolean {
-    console.log(this.auth.isLoggedIn);
-    if (this.auth.isLoggedIn) {
+    if (this.isLogin) {
       this.auth.logout();
     }
-    this.username = 'Login';
     this.router.navigate(['/auth']);
 
     return false;

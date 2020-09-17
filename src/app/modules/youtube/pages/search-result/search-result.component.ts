@@ -16,7 +16,6 @@ import { filter, mergeMap, debounceTime } from "rxjs/operators";
 export class SearchResultsComponent implements OnInit {
   public cards: Observable<IItem[]>;
   public filter: { type: string, value: boolean | string };
-  public test3: IItem[]
 
   constructor(private filters: FilterService,
               private search: SearchService,

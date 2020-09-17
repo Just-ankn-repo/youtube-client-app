@@ -8,6 +8,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class SearchService {
+
   constructor(private http: HttpClient) { }
 
   public getSearchResult(keyword: string): Observable<IItem[]> {

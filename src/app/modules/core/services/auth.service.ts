@@ -1,21 +1,35 @@
 import { Injectable } from '@angular/core';
+import {Observable, Subject} from "rxjs";
+
+interface IAuth {
+  username: string;
+  authenticated: boolean
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  public authenticated: boolean;
+  private authSubject = new Subject<IAuth>();
 
   constructor() { }
 
   public logout(): void {
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('user_name');
+    this.authSubject.next({
+      username: '',
+      authenticated: false
+    });
   }
 
-  get isLoggedIn(): boolean {
-    const getAccessToken: string = localStorage.getItem('access_token');
-    return getAccessToken === 'testToken';
+  public login(userName: string): void {
+    this.authSubject.next({
+      username: userName,
+      authenticated: true
+    });
+  }
+
+  get isLoggedIn(): Observable<IAuth> {
+    return this.authSubject.asObservable();
   }
 
 }
