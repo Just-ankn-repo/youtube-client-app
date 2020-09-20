@@ -1,0 +1,11 @@
+<mat-card class="result-card" fxLayout="column">
+  <img fxFlex="63" mat-card-image src="{{ customCard.thumbnailUrl }}">
+  <mat-card-title fxFlex="50" fxFlexAlign="center"
+                  title="{{ customCard.title }}">{{ customCard.title }}</mat-card-title>
+  <mat-card-subtitle [publishedAt]="customCard.creationDate" appHumanReadableDate fxFlex="50"
+                     fxFlexAlign="end"></mat-card-subtitle>
+  <mat-card-subtitle fxFlex="10">{{ customCard.description }}</mat-card-subtitle>
+  <mat-card-content fxLayout="row" fxLayoutAlign="center">
+    <a color="primary" href="{{ customCard.videoUrl}}" mat-raised-button>Video</a>
+  </mat-card-content>
+</mat-card>

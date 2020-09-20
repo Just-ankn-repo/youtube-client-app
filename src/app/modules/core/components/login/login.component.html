@@ -1,3 +1,14 @@
-<div class="login-element" (click)="loginLogout()" fxLayout="row" fxLayoutGap="2%" fxLayoutAlign="center center">
-  <div>{{ username }}</div><mat-icon>face</mat-icon>
+<div *ngIf="isLogin">
+  <button [matMenuTriggerFor]="menu" mat-button>{{ username }}
+    <mat-icon>face</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <a *ngIf="isAdmin" mat-menu-item routerLink="admin/create">Create Custom Card</a>
+    <button (click)="loginLogout()" mat-menu-item>Logout</button>
+  </mat-menu>
+</div>
+<div *ngIf="!isLogin">
+  <button (click)="loginLogout()" mat-button>Login
+    <mat-icon>face</mat-icon>
+  </button>
 </div>

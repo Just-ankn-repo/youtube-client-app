@@ -1,1 +1,32 @@
-<p>create-card-form works!</p>
+<div fxFlex="row" fxLayoutAlign="center">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Create New Card</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (submit)="createCustomCard()" [formGroup]="customCard">
+        <p>
+          <mat-form-field class="login-full-width">
+            <input formControlName="title" matInput matInput placeholder="Title" type="text">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="login-full-width">
+            <input formControlName="description" matInput matInput placeholder="Description" type="text">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="login-full-width">
+            <input formControlName="thumbnailUrl" matInput matInput placeholder="Thumbnail Url" type="text">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="login-full-width">
+            <input formControlName="videoUrl" matInput matInput placeholder="Video Url" type="text">
+          </mat-form-field>
+        </p>
+        <button class="btn-block" color="primary" mat-raised-button type="submit">Create</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

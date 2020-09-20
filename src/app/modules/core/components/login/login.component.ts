@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,15 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  private isLogin: boolean;
-  public username: string = 'Login';
+  public username: string;
+  public isAdmin: boolean;
+  public isLogin: boolean;
 
   constructor(private auth: AuthService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   public ngOnInit(): void {
-    this.auth.isLoggedIn.subscribe( param => {
-      this.username = param.username !== '' ? param.username : 'Login';
+    this.auth.isLoggedIn.subscribe(param => {
+      this.username = param.username;
+      this.isAdmin = param.username.toLowerCase() === 'admin';
       this.isLogin = param.authenticated;
     });
   }

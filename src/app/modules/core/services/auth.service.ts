@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import {Observable, BehaviorSubject} from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 interface IAuth {
   username: string;
@@ -21,6 +21,10 @@ export class AuthService {
     })
   }
 
+  get isLoggedIn(): Observable<IAuth> {
+    return this.authSubject.asObservable();
+  }
+
   public logout(): void {
     localStorage.setItem('username', '');
     localStorage.setItem('authenticated', 'false');
@@ -39,10 +43,6 @@ export class AuthService {
       username: userName,
       authenticated: true
     });
-  }
-
-  get isLoggedIn(): Observable<IAuth> {
-    return this.authSubject.asObservable();
   }
 
 }

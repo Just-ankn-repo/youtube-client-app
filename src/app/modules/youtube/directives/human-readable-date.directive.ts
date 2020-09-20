@@ -31,11 +31,12 @@ const weekdays: string[] = [
 export class HumanReadableDateDirective {
   @Input() public publishedAt: string;
 
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef) {
+  }
 
   public ngOnInit(): void {
     const publishedAtDate: Date = new Date(this.publishedAt);
-    const weekday: number =  publishedAtDate.getDay();
+    const weekday: number = publishedAtDate.getDay();
     const month: number = publishedAtDate.getMonth();
     const day: number = publishedAtDate.getDate();
     const year: number = publishedAtDate.getFullYear();

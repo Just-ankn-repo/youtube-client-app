@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {StoreState} from "../../../redux/store.state";
+import {Store} from "@ngrx/store";
+import * as CardActions from '../../../redux/actions/card.actions';
 
 @Component({
   selector: 'app-admin-page',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<StoreState>) {
+  }
 
   ngOnInit(): void {
   }
 
+  onActivate(componentReference) {
+    componentReference.newCustomCard.subscribe((data) => {
+      this.store.dispatch(new CardActions.AddCustomCard(data));
+    })
+  }
 }

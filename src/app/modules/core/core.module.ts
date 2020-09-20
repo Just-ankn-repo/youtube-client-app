@@ -1,18 +1,19 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { MaterialModule } from '../material/material.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { SharedModule } from '../shared/shared.module';
-import { RouterModule } from '@angular/router';
+import {MaterialModule} from '../material/material.module';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {SharedModule} from '../shared/shared.module';
+import {RouterModule} from '@angular/router';
 
-import { HeaderComponent } from './components/header/header.component';
-import { SearchComponent } from './components/search/search.component';
-import { LoginComponent } from './components/login/login.component';
-import { FilterComponent } from './components/filter/filter.component';
+import {HeaderComponent} from './components/header/header.component';
+import {SearchComponent} from './components/search/search.component';
+import {LoginComponent} from './components/login/login.component';
+import {FilterComponent} from './components/filter/filter.component';
 
-import { Page404Component } from './pages/page404/page404.component';
-import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
+import {Page404Component} from './pages/page404/page404.component';
+import {WelcomePageComponent} from './pages/welcome-page/welcome-page.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -28,13 +29,15 @@ import { WelcomePageComponent } from './pages/welcome-page/welcome-page.componen
     SharedModule,
     FlexLayoutModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    MatMenuModule
   ],
   exports: [
     HeaderComponent,
     Page404Component,
     WelcomePageComponent
   ],
-  providers: [ ]
+  providers: []
 })
-export class CoreModule { }
+export class CoreModule {
+}
